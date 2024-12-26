@@ -1,0 +1,101 @@
+{% extends 'layout/plantilla.html' %}
+
+{% block content %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Edad</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Juan Pérez</td>
+            <td>28</td>
+            <td>juan.perez@example.com</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>María López</td>
+            <td>34</td>
+            <td>maria.lopez@example.com</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Carlos Gómez</td>
+            <td>22</td>
+            <td>carlos.gomez@example.com</td>
+        </tr>
+    </tbody>
+</table>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Producto A</td>
+            <td>$10.00</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>Producto B</td>
+            <td>$15.50</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>Producto C</td>
+            <td>$7.25</td>
+            <td>10</td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}
+
+{% block styles %}
+<style>
+    .table {
+        margin: 20px 0;
+        border-radius: 0.5rem;
+        overflow: hidden;
+    }
+
+    .table th {
+        background-color: #007bff;
+        /* Color de fondo del encabezado */
+        color: white;
+        /* Color del texto del encabezado */
+        text-align: center;
+        /* Centrar texto del encabezado */
+    }
+
+    .table td {
+        text-align: center;
+        /* Centrar texto de las celdas */
+    }
+
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: #f2f2f2;
+        /* Color de fondo para filas impares */
+    }
+
+    .table-bordered {
+        border: 1px solid #dee2e6;
+        /* Borde de la tabla */
+    }
+
+    .table-bordered th,
+    .table-bordered td {
+        border: 1px solid #dee2e6;
+        /* Borde de las celdas */
+    }
+</style>
+{% endblock %}

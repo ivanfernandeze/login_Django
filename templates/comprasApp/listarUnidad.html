@@ -1,0 +1,103 @@
+{% extends "layout/plantilla.html" %} {% block content %}
+<div class="container">
+  <div class="card card-outline card-info mt-3">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <h1 class="card-title">LISTADO DE UNIDADES</h1>
+      <a href="{% url 'agregarunidad' %}" class="btn btn-sm btn-primary btnadd"
+        ><i class="fas fa-plus"></i> NUEVO</a
+      >
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6 ml-auto">
+          <form action="" method="GET" class="input-group">
+            <input
+              type="text"
+              name="buscar"
+              id="buscar"
+              class="form-control"
+              autofocus
+              placeholder="Buscar"
+              value=""
+            />
+            <span class="input-group-btn">
+              <button class="btn btn-primary" type="submit">
+                <i class="fa fa-search"></i>
+              </button>
+            </span>
+          </form>
+        </div>
+      </div>
+      <table
+        id="tablaunidades"
+        class="table table-striped mt-4"
+        style="width: 100%"
+      >
+        <thead class="bg-info text-white">
+          <tr>
+            <th>Descripción</th>
+            <th>
+              <center>Acciones</center>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {% if unidad %} {% for uni in unidad %}
+          <tr>
+            <td>{{ uni.descripcion }}</td>
+            <td class="text-center">
+              <a
+                href="{% url 'editarunidad' uni.id %}"
+                class="btn btn-info btn-sm"
+                ><i class="fa fa-edit"></i> Editar</a
+              >
+              <a
+                href="#"
+                onclick="eliminarUnidad('{{ uni.id }}', '{{ uni.descripcion }}')"
+                class="btn btn-danger btn-sm"
+                ><i class="fa fa-trash"></i> Eliminar</a
+              >
+            </td>
+          </tr>
+          {% endfor %} {% else %}
+          <tr>
+            <td colspan="2" class="text-center">
+              <p>No hay Registros</p>
+            </td>
+          </tr>
+          {% endif %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %} {% block js %}
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{% if messages %} {% for m in messages %}
+<script>
+  Swal.fire({
+    title: "Eliminado",
+    text: "{{ m }}",
+    icon: "success",
+  });
+</script>
+{% endfor %} {% endif %}
+<script>
+  function eliminarUnidad(id, descripcion) {
+    Swal.fire({
+      title: "¿Realmente desea eliminar Registro?",
+      text: "Descripción :" + descripcion,
+      icon: "question",
+      showCancelButton: true,
+      cancelButtonText: "No",
+      confirmButtonText: "Sí",
+      reverseButton: true,
+      confirmButtonColor: "#dc3545",
+    }).then(function (result) {
+      if (result.isConfirmed) {
+        window.location.href = "eliminarunidad/" + id + "/";
+      }
+    });
+  }
+</script>
+{% endblock js %}

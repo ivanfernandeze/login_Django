@@ -1,0 +1,97 @@
+{% extends 'layout/plantilla.html' %}
+
+{% block title %}
+Lista de Clientes
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Lista de Clientes</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Dirección</th>
+                <th>Email</th>
+                <th>Teléfono</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cliente in clientes %}
+            <tr>
+                <td>{{ cliente.idcliente }}</td>
+                <td>{{ cliente.nombres }}</td>
+                <td>{{ cliente.apellidos }}</td>
+                <td>{{ cliente.direccion }}</td>
+                <td>{{ cliente.email }}</td>
+                <td>{{ cliente.telefono }}</td>
+                <td>{{ cliente.estado }}</td>
+                <td>
+                    <a class="btn" href="{% url 'update' cliente.idcliente %}">Editar</a>
+                    <a class="btn" href="{% url 'delete' cliente.idcliente %}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a class="btn" href="{% url 'create' %}">Crear nuevo cliente</a>
+</div>
+{% endblock %}
+
+{% block styles %}
+<style>
+    /* read.css */
+
+    /* Contenedor Principal */
+    .container {
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 90%;
+    }
+
+    /* Estilos de la Tabla */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    table th,
+    table td {
+        padding: 12px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+
+    table th {
+        background-color: #f4f4f4;
+        font-weight: bold;
+    }
+
+    table td {
+        background-color: #fff;
+    }
+
+    a.btn {
+        text-decoration: none;
+        color: #fff;
+        background-color: seagreen;
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        display: inline-block;
+        margin-top: 10px;
+    }
+
+    a.btn:hover {
+        background-color: #555;
+    }
+</style>
+{% endblock %}

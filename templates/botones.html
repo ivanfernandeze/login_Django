@@ -1,0 +1,144 @@
+{% extends 'layout/plantilla.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static '' %}" />
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+            aria-selected="true">Laravel</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+            aria-selected="false">Django</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
+            aria-selected="false">C#</a>
+    </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <h5>Curso de Laravel</h5>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi rerum facilis voluptates exercitationem
+            aliquam molestiae obcaecati consequuntur tempore nam. Commodi.</p>
+        <div class="card-deck">
+            <div class="card">
+                <img src="{% static 'imgs/l1.pnim' %}" class="card-img-top" alt="Imagen 1" />
+                <div class="card-body">
+                    <h5 class="card-title">Título del Curso 1</h5>
+                    <p class="card-text">Descripción breve del curso.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'imgs/l2.jpg' %}" class="card-img-top" alt="Imagen 2" />
+                <div class="card-body">
+                    <h5 class="card-title">Título del Curso 2</h5>
+                    <p class="card-text">Descripción breve del curso.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'imgs/l3.jpg' %}" class="card-img-top" alt="Imagen 3" />
+                <div class="card-body">
+                    <h5 class="card-title">Título del Curso 3</h5>
+                    <p class="card-text">Descripción breve del curso.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <h5>Curso de Django</h5>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum rerum ipsa quas explicabo accusamus ex
+            unde
+            veritatis dignissimos, distinctio cupiditate?</p>
+        <div class="card-deck">
+            <div class="card">
+                <img src="{% static 'imgs/d1.png' %}" class="card-img-top" alt="Imagen 4" />
+                <div class="card-body">
+                    <h5 class="card-title">Título del Curso 1</h5>
+                    <p class="card-text">Descripción breve del curso.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'imgs/d4.jpg' %}" class="card-img-top" alt="Imagen 5" />
+                <div class="card-body">
+                    <h5 class="card-title">Título del Curso 2</h5>
+                    <p class="card-text">Descripción breve del curso.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'imgs/d3.jpg' %}" class="card-img-top" alt="Imagen 6" />
+                <div class="card-body">
+                    <h5 class="card-title">Título del Curso 3</h5>
+                    <p class="card-text">Descripción breve del curso.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+        <h5>Curso de C#</h5>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque ducimus illo veritatis asperiores deleniti,
+            minus
+            nemo consectetur illum incidunt unde?</p>
+        <div class="card-deck">
+            <div class="card">
+                <img src="{% static 'imgs/c1.png' %}" class="card-img-top" alt="Imagen 7" />
+                <div class="card-body">
+                    <h5 class="card-title">Título del Curso 1</h5>
+                    <p class="card-text">Descripción breve del curso.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'imgs/c2.png' %}" class="card-img-top" alt="Imagen 8" />
+                <div class="card-body">
+                    <h5 class="card-title">Título del Curso 2</h5>
+                    <p class="card-text">Descripción breve del curso.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'imgs/c3.jpg' %}" class="card-img-top" alt="Imagen 9" />
+                <div class="card-body">
+                    <h5 class="card-title">Título del Curso 3</h5>
+                    <p class="card-text">Descripción breve del curso.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block styles %}
+<style>
+    .nav-tabs .nav-link {
+        color: #007bff;
+        /* Color del texto de las pestañas */
+        border: 1px solid transparent;
+        /* Borde inicial de las pestañas */
+        border-radius: 0.5rem 0.5rem 0 0;
+        /* Bordes redondeados */
+    }
+
+    .nav-tabs .nav-link.active {
+        background-color: #007bff;
+        /* Color de fondo de la pestaña activa */
+        color: white;
+        /* Color del texto de la pestaña activa */
+        border-color: #007bff #007bff transparent;
+        /* Borde de la pestaña activa */
+    }
+
+    .nav-tabs .nav-link:hover {
+        background-color: rgba(0, 123, 255, 0.1);
+    }
+
+    .tab-content {
+        padding: 20px;
+        /* Espaciado interno para el contenido de las pestañas */
+        border: 1px solid #dee2e6;
+        /* Borde del contenido de las pestañas */
+        border-radius: 0.5rem;
+        /* Bordes redondeados para el contenido */
+        background-color: #f8f9fa;
+        /* Color de fondo del contenido */
+    }
+</style>
+{% endblock %}

@@ -1,0 +1,67 @@
+body.login {
+    background-color: #f8f9fa;
+    /* Color de fondo suave */
+    font-family: Arial, sans-serif;
+    /* Tipografía */
+}
+
+.container {
+    max-width: 400px;
+    /* Ancho máximo del contenedor */
+    margin: auto;
+    /* Centrar el contenedor */
+    padding: 20px;
+    /* Espaciado interno */
+    background-color: white;
+    /* Fondo blanco para el formulario */
+    border-radius: 8px;
+    /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
+}
+
+.logo {
+    text-align: center;
+    /* Centrar logo */
+    margin-bottom: 20px;
+    /* Espaciado inferior */
+}
+
+.logo img {
+    max-width: 100px;
+    /* Tamaño máximo del logo */
+    margin-bottom: 10px;
+    /* Espaciado inferior */
+}
+
+.form-title {
+    text-align: center;
+    /* Centrar título del formulario */
+    margin-bottom: 20px;
+    /* Espaciado inferior */
+}
+
+.btn-success {
+    background-color: #28a745;
+    /* Color verde para el botón */
+    border-color: #28a745;
+    /* Borde verde para el botón */
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    /* Color verde oscuro al pasar el ratón */
+    border-color: #1e7e34;
+    /* Borde verde oscuro al pasar el ratón */
+}
+
+.copyright {
+    text-align: center;
+    /* Centrar el texto de copyright */
+    margin-top: 20px;
+    /* Espaciado superior */
+    font-size: 14px;
+    /* Tamaño de fuente */
+    color: #6c757d;
+    /* Color de texto gris */
+}
